@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import { View, Text, FlatList, StyleSheet } from 'react-native';
+import NavigationBar from '../components/navigation/navigation.js';
 
 import { Product } from '../components/Product.js';
 import { getProducts } from '../services/ProductsService.js';
@@ -25,13 +26,9 @@ export function ProductsList ({navigation}) {
   });
   
   return (
-    <FlatList
-      style={styles.productsList}
-      contentContainerStyle={styles.productsListContainer}
-      keyExtractor={(item) => item.id.toString()}
-      data={products}
-      renderItem={renderProduct}
-    />
+    <>
+      <NavigationBar />
+    </>
   );
 }
 

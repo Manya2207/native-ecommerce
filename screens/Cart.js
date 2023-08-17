@@ -30,14 +30,20 @@ export function Cart ({navigation}) {
   }
   
   return (
-    <FlatList
-      style={styles.itemsList}
-      contentContainerStyle={styles.itemsListContainer}
-      data={items}
-      renderItem={renderItem}
-      keyExtractor={(item) => item.product.id.toString()}
-      ListFooterComponent={Totals}
-    />
+    <>
+      <FlatList
+        style={styles.itemsList}
+        contentContainerStyle={styles.itemsListContainer}
+        data={items}
+        renderItem={renderItem}
+        keyExtractor={(item) => item.product.id.toString()}
+        ListFooterComponent={Totals}
+      />
+      <Button
+        onPress={() => navigation.navigate('Payment')}
+        title="Proceed to pay"
+      />
+    </>
   );
 }
 
